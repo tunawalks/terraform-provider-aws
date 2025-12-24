@@ -62,6 +62,12 @@ func (p *servicePackage) FrameworkResources(ctx context.Context) []*inttypes.Ser
 			Region:   unique.Make(inttypes.ResourceRegionDefault()),
 		},
 		{
+			Factory:  newManagedLoginTermsResource,
+			TypeName: "aws_cognito_managed_login_terms",
+			Name:     "Managed Login Terms",
+			Region:   unique.Make(inttypes.ResourceRegionDefault()),
+		},
+		{
 			Factory:  newManagedUserPoolClientResource,
 			TypeName: "aws_cognito_managed_user_pool_client",
 			Name:     "Managed User Pool Client",

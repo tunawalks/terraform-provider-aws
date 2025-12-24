@@ -8,6 +8,7 @@ var (
 	ResourceIdentityProvider         = resourceIdentityProvider
 	ResourceLogDeliveryConfiguration = newLogDeliveryConfigurationResource
 	ResourceManagedLoginBranding     = newManagedLoginBrandingResource
+	ResourceManagedLoginTerms        = newManagedLoginTermsResource
 	ResourceManagedUserPoolClient    = newManagedUserPoolClientResource
 	ResourceResourceServer           = resourceResourceServer
 	ResourceRiskConfiguration        = resourceRiskConfiguration
@@ -24,6 +25,7 @@ var (
 	FindIdentityProviderByTwoPartKey         = findIdentityProviderByTwoPartKey
 	FindLogDeliveryConfigurationByUserPoolID = findLogDeliveryConfigurationByUserPoolID
 	FindManagedLoginBrandingByThreePartKey   = findManagedLoginBrandingByThreePartKey
+	FindManagedLoginTermsByTwoPartKey        = findManagedLoginTermsByTwoPartKey
 	FindResourceServerByTwoPartKey           = findResourceServerByTwoPartKey
 	FindRiskConfigurationByTwoPartKey        = findRiskConfigurationByTwoPartKey
 	FindUserByTwoPartKey                     = findUserByTwoPartKey
