@@ -71,7 +71,6 @@ func (r *managedLoginTermsResource) Schema(ctx context.Context, request resource
 			},
 			"links": schema.MapAttribute{
 				CustomType:  fwtypes.MapOfStringType,
-				ElementType: types.StringType,
 				Required:    true,
 				Validators: []validator.Map{
 					mapvalidator.SizeAtLeast(1),
@@ -377,7 +376,8 @@ func (v resourceManagedLoginTermsLinksValidator) ValidateResource(ctx context.Co
 	}
 
 	links := make(map[string]string)
-	resp.Diagnostics.Append(config.Links.ElementsAs(ctx, &links, false)...)
+	// Allow unresolved values during plan to avoid conversion errors
+	resp.Diagnostics.Append(config.Links.ElementsAs(ctx, &links, true)...)
 	if resp.Diagnostics.HasError() {
 		return
 	}
