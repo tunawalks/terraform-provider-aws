@@ -70,8 +70,8 @@ func (r *managedLoginTermsResource) Schema(ctx context.Context, request resource
 				},
 			},
 			"links": schema.MapAttribute{
-				CustomType:  fwtypes.MapOfStringType,
-				Required:    true,
+				CustomType: fwtypes.MapOfStringType,
+				Required:   true,
 				Validators: []validator.Map{
 					mapvalidator.SizeAtLeast(1),
 					mapvalidator.SizeAtMost(12),
